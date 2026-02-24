@@ -1,4 +1,7 @@
 package oop_114493_claudiawiyadigunawan.week03
 
-class Main {
+fun main() {
+    val e = Employee("Budi")
+    println("--- Test Error ---")
+    e.salary = 5000
 }
