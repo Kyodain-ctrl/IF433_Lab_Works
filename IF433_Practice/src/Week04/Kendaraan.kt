@@ -1,10 +1,10 @@
 package Week04
 
-class Kendaraan {
+open class Kendaraan {
     private var merk: String = ""
     private var kecepatan: Int = 0
 
-    fun jalan_maju(){
+    open fun jalan_maju(){
         println("Jalan $kecepatan")
     }
 }

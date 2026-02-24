@@ -8,4 +8,5 @@ fun main() {
 
     println("Damage akhir: ${weapon.damage}")
     println("Tier: ${weapon.tier}")
+
 }

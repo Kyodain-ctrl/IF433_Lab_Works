@@ -1,8 +1,12 @@
 package Week04
 
-import Week04.Kendaraan
+import Week04.Knd_mobil
+import Week04.Knd_motor
 
 fun main() {
-    var knd = Kendaraan()
-    knd.jalan_maju()
+    var mbl = Knd_mobil()
+    mbl.jalan_maju()
+
+    var mtr = Knd_motor()
+    mtr.jalan_maju()
 }
