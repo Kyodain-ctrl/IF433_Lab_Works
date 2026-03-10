@@ -3,6 +3,7 @@ package week06_C
 interface Mahasiswa {
     val nama: String
     fun belajar()
-    fun serang()
-    fun mati()
+    fun main_game() {
+        println("Mahasiswa main game di kelas")
+    }
 }
