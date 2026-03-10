@@ -1,4 +1,4 @@
-package Week04
+package week04_C
 
 class Knd_motor:Kendaraan() {
     private var jmlBan: Int = 0

@@ -1,4 +1,4 @@
-package Week04
+package week04_C
 
 open class Kendaraan {
     private var merk: String = ""

@@ -1,7 +1,4 @@
-package Week04
-
-import Week04.Knd_mobil
-import Week04.Knd_motor
+package week04_C
 
 fun main() {
     var mbl = Knd_mobil()
