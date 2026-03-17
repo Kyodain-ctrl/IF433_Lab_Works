@@ -5,6 +5,6 @@ object DatabaseManager {
 
     fun connect() {
         connectionStatus = "Connected to Server"
-        println("Databse is ready.")
+        println("Database is ready.")
     }
 }
