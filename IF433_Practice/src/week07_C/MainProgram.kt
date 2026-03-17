@@ -10,6 +10,4 @@ fun main() {
     println("Nama Matkul: ${Hitungan.namaMtk}")
 
     Hitungan.buat_data("User biasa")
-
-
 }
