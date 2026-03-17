@@ -11,6 +11,12 @@ fun main() {
     println(reg1)
     println("Sama? ${reg1 == reg2}")
 
+    println("\n=== TEST DATA CLASS ===")
+    val data1 = DataUser("Alice", 22)
+    val data2 = DataUser("Alice", 22)
+    println(data1)
+    println("Sama? ${data1 == data2}")
+
     println("\n=== TEST COMPANION OBJECT ===")
     val client = NetworkClient("https://api.umn.ac.id")
     client.connect()
