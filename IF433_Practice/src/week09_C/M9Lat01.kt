@@ -30,4 +30,20 @@ fun main() {
     arMakanan.add("Mie")
     arMakanan.remove("Nasi")
     println(arMakanan)
+
+    println("\n=== MAP OF ===")
+    var arSiswa = mapOf(
+        "Andi" to 89,
+        "Toni" to 73,
+        "Ivander" to 90
+    )
+    println("banyak data siswa " + arSiswa.size)
+    println("nilai si andi " + arSiswa["Andi"])
+    println("semua keys: " + arSiswa.keys)
+    println("semua values: " + arSiswa.values)
+    println("semua keys: " + arSiswa.keys.elementAt(1))
+    println(arSiswa)
+
+    println("\n=== MAP OF MUTABLE ===")
+
 }
