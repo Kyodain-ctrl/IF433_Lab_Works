@@ -62,4 +62,16 @@ fun main() {
     }
     var kurang = {a: Int, b: Int -> a - b }
     println("kurang: ${kurang(5,3)}")
+
+    println("\n=== IMPLICIT ===")
+    var pangkat = {x:Int -> x+x}
+    var hitungPangkat:(Int) -> Int = { it * it }
+    println("Pangkat " + hitungPangkat(5))
+
+    arSiswa.forEach {
+        siswa -> println(siswa)
+    }
+    for(sis in arSiswa) {
+        println(sis)
+    }
 }
