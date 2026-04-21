@@ -45,5 +45,14 @@ fun main() {
     println(arSiswa)
 
     println("\n=== MAP OF MUTABLE ===")
-
+    var arMenu = mutableMapOf(
+        "Nasi" to 1000,
+        "Ayam" to 2000,
+        "Sayur asem" to 1500
+    )
+    println("banyak menu: " + arMenu.size)
+    arMenu["Nasi"] = 500
+    arMenu.remove("Ayam")
+    arMenu.put("Udang", 2300)
+    println(arMenu)
 }
