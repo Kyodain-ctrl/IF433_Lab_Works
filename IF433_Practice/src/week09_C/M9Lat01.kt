@@ -55,4 +55,11 @@ fun main() {
     arMenu.remove("Ayam")
     arMenu.put("Udang", 2300)
     println(arMenu)
+
+    println("\n=== LAMBDA ===")
+    fun tambah(a: Int, b: Int): Int {
+        return a + b
+    }
+    var kurang = {a: Int, b: Int -> a - b }
+    println("kurang: ${kurang(5,3)}")
 }
