@@ -28,6 +28,10 @@ class kalkulator<T: Number>(val a: T, val b: T) {
     }
 }
 
+fun <T> nilaiKKM(list: List<T>, kkm: T): List<T> where T : Comparable<T> {
+    return list.filter { it >= kkm }
+}
+
 fun main() {
     println("\n=== Non Generic ===")
     val nGen = nonGeneric(100)
@@ -54,4 +58,10 @@ fun main() {
     val kalk = kalkulator(10.2, 3.5)
     println("Hasi kali: ${kalk.kali()}")
     println("Hasil bagi: ${kalk.bagi()}")
+
+    println("\n=== Generic - WHERE ===")
+    val nilaiMhs = listOf(80, 90, 83, 70, 65, 50, 73, 40, 61)
+    val nilaiFilterKKM = nilaiKKM(nilaiMhs, 70)
+    println(nilaiMhs)
+    println(nilaiFilterKKM)
 }
