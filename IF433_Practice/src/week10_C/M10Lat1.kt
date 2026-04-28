@@ -6,6 +6,10 @@ class generic<T>(var hasil: T)
 
 class Kota<T, V>(var kodepos: T, var telp: V)
 
+fun <T> cobaFungsi(angka: T) :T {
+    return angka
+}
+
 fun main() {
     println("=== Non Generic ===")
     val nGen = nonGeneric(100)
@@ -20,4 +24,7 @@ fun main() {
     val city = Kota("12345", 880123)
     println("kodepos kamu " + city.kodepos)
     println("telp kamu " + city.telp)
+
+    println("=== Generic - Function ===")
+    println("hasil: " + cobaFungsi(10))
 }
