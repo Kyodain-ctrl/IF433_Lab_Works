@@ -10,6 +10,14 @@ fun <T> cobaFungsi(angka: T) :T {
     return angka
 }
 
+fun <T: Number> tambah(angka: T): Double {
+    return angka.toDouble() + 50
+}
+
+fun <T: Number> kurang(angka: T): Double {
+    return angka.toDouble() - 50
+}
+
 fun main() {
     println("=== Non Generic ===")
     val nGen = nonGeneric(100)
