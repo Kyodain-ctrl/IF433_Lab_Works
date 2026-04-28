@@ -18,6 +18,6 @@ fun main() {
 
     println("=== Generic 2 Parametes ===")
     val city = Kota("12345", 880123)
-    println("kodepos kamu" + city.kodepos)
-    println("telp kamu" + city.telp)
+    println("kodepos kamu " + city.kodepos)
+    println("telp kamu " + city.telp)
 }
