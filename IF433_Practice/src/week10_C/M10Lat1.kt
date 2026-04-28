@@ -18,21 +18,40 @@ fun <T: Number> kurang(angka: T): Double {
     return angka.toDouble() - 50
 }
 
+class kalkulator<T: Number>(val a: T, val b: T) {
+    fun kali(): Double {
+        return a.toDouble() * b.toDouble()
+    }
+
+    fun bagi(): Int {
+        return a.toInt() / b.toInt()
+    }
+}
+
 fun main() {
-    println("=== Non Generic ===")
+    println("\n=== Non Generic ===")
     val nGen = nonGeneric(100)
     val angkaNGen = nGen.hasil as Int
     println(angkaNGen + 50)
 
-    println("=== Generic ===")
+    println("\n=== Generic ===")
     val gen = generic(200)
     println(gen.hasil + 50)
 
-    println("=== Generic 2 Parametes ===")
+    println("\n=== Generic 2 Parametes ===")
     val city = Kota("12345", 880123)
     println("kodepos kamu " + city.kodepos)
     println("telp kamu " + city.telp)
 
-    println("=== Generic - Function ===")
+    println("\n=== Generic - Function ===")
     println("hasil: " + cobaFungsi(10))
+
+    println("\n=== Generic Constraints ===")
+    println("Hasil tambah: " + tambah(100.5))
+    println("Hasil kurang: " + kurang(100.5))
+
+    println("\n=== Generic - Function in class ===")
+    val kalk = kalkulator(10.2, 3.5)
+    println("Hasi kali: ${kalk.kali()}")
+    println("Hasil bagi: ${kalk.bagi()}")
 }
