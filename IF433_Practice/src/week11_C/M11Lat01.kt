@@ -53,4 +53,24 @@ fun main() {
     println(nama1.uppercase())
 
     println("Claudia Wiyadi Gunawan".RubahHurufBesarDepan())
+
+    //scope - let
+    val huruf:String = "UMN"
+    val hasilKampus = huruf.let {
+        if(it=="UMN") {
+            "Kampus saya"
+        } else {
+            "Bukan kampus saya"
+        }
+    }
+    println(hasilKampus)
+
+    //scope - run
+    val nilaiKamu = 70.run {
+        if(this >= 70) {
+            println("Lulus")
+        } else {
+            println("Gagal")
+        }
+    }
 }
