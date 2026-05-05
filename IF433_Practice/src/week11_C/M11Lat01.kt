@@ -34,6 +34,8 @@ fun String?.CekNulldanEmpty():String {
     return hasil
 }
 
+data class Manusia(var nama:String, var umur: Int)
+
 fun main() {
     //extension function - cek null / empty
     var passwordKamu: String? = "12345"
@@ -83,4 +85,16 @@ fun main() {
         }
     }
     println(pekerjaan)
+
+    //scope - apply
+    val orang = Manusia("Budi", 25).apply {
+        umur = 27
+    }
+    println("nama kamu ${orang.nama} umur kamu ${orang.umur}")
+
+    var deretAngka = mutableListOf<Int>(1,2,3,4)
+    deretAngka.also {
+        println("Sebelum $deretAngka")
+    }.add(5)
+    println("Setelah $deretAngka")
 }
