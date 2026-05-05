@@ -48,4 +48,8 @@ fun main() {
         sumOf { it.powerLoad }
     }
     println("Total daya: $totalPower Watt")
+
+    homeDevices.forEach {
+        println(it.diagnose())
+    }
 }
