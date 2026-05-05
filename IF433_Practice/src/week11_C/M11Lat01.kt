@@ -73,4 +73,14 @@ fun main() {
             println("Gagal")
         }
     }
+
+    //scope - with
+    val pekerjaan = with("Mahasiswa") {
+        if(this=="Mahasiswa") {
+            println("Pelajar")
+        } else {
+            println("Pekerja")
+        }
+    }
+    println(pekerjaan)
 }
