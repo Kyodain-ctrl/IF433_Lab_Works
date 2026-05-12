@@ -30,7 +30,7 @@ fun dispenseKibble(
 
 fun main() {
 
-    var currentKibbleStock = 50
+    var currentKibbleStock = 40
 
     try {
 
