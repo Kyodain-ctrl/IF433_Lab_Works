@@ -33,12 +33,27 @@ fun cek_nilai (nilai: Int) {
     }
 }
 
+class cek_saldo_rekening(val pengeluaran: Int, val saldo: Int) :
+    Exception("Saldo kamu sisa $saldo, gak cukup buat belanja $pengeluaran")
+
+class transaksi_keuangan(val totalBelanja: Int) {
+    fun narik_uang(balance: Int) {
+        if(totalBelanja > balance) {
+            throw cek_saldo_rekening(totalBelanja, balance)
+        } else {
+            println("Transaksi berhasil, sisa saldo: ${balance - totalBelanja}")
+        }
+    }
+}
+
 fun main () {
     pembagian()
     cek_tipe_variabel()
     try {
         cek_nilai(90)
-    } catch (e: Exception){
+    } catch (e: IllegalArgumentException){
         println("Ada error di nilai: "  + e.message)
     }
+    val trx = transaksi_keuangan(1000)
+    trx.narik_uang(1200)
 }
