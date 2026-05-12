@@ -46,6 +46,34 @@ class transaksi_keuangan(val totalBelanja: Int) {
     }
 }
 
+fun multiple_catch (input: String) {
+    try {
+        val angka: Int = input.toInt()
+        val hitungBagi:Int = angka/0
+        println("Hasil bagi: $hitungBagi")
+    } catch (e: NumberFormatException) {
+        println("Ga bisa membagi huruf ${e.message}")
+    } catch (e: ArithmeticException) {
+        println("Masa pembagian pake 0: ${e.message}")
+    } catch (e: Exception) {
+        println("Ada error di multiple catch ${e.message}")
+    }
+}
+
+sealed class BANKException(pesan: String) : Exception("Error di BANK Exception $pesan")
+
+class cek_saldo(val pengeluaran: Int) : BANKException("Belanja $pengeluaran lebih besar dari saldo")
+class cek_input(val transaksi: Int) : BANKException("Transaksi masa minus $transaksi")
+
+fun transaksi_belanja(saldoKamu: Int, jajanKamu: Int): Int {
+    if(jajanKamu < 0) {
+        throw cek_input(jajanKamu)
+    } else if(saldoKamu < jajanKamu) {
+        throw cek_saldo(jajanKamu)
+    }
+    return saldoKamu - jajanKamu
+}
+
 fun main () {
     pembagian()
     cek_tipe_variabel()
@@ -54,6 +82,14 @@ fun main () {
     } catch (e: IllegalArgumentException){
         println("Ada error di nilai: "  + e.message)
     }
-    val trx = transaksi_keuangan(2000)
-    trx.narik_uang(1200)
+    try {
+        val trx = transaksi_keuangan(1000)
+        trx.narik_uang(1200)
+    } catch (e: cek_saldo_rekening) {
+        println("Ada error transaksi: ${e.message}")
+    }
+    multiple_catch("10")
+    runCatching { transaksi_belanja(2000, 1200) }
+        .onSuccess { println("Belanja berhasil, sisa saldo $it") }
+        .onFailure { println(it) }
 }
