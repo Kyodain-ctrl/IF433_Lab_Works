@@ -23,7 +23,22 @@ fun cek_tipe_variabel () {
     println(angka)
 }
 
+fun cek_nilai (nilai: Int) {
+    if(nilai < 0){
+        throw IllegalArgumentException("Masa nilai minus")
+    } else if (nilai > 100) {
+        throw IllegalArgumentException("Nilai gaboleh lebih gede dari 100")
+    } else {
+        println("Nilai kamu adalah " + nilai)
+    }
+}
+
 fun main () {
     pembagian()
     cek_tipe_variabel()
+    try {
+        cek_nilai(90)
+    } catch (e: Exception){
+        println("Ada error di nilai: "  + e.message)
+    }
 }
