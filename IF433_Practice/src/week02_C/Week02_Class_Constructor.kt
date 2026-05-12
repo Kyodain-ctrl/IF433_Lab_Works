@@ -1,7 +1,9 @@
+package week02_C
+
 class MyCar {
     public var warna:String = "Merah"
     public var kecepatan: Int = 50
-    // fun MyCar dianggap constructor
+    // fun week02_C.MyCar dianggap constructor
     init {
         if(kecepatan>=70) {
             println("Cepat banget")

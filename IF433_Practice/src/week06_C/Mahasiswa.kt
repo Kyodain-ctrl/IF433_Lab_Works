@@ -5,6 +5,6 @@ interface Mahasiswa {
     fun belajar()
     fun makan()
     fun main_game() {
-        println("Mahasiswa main game di kelas")
+        println("Mahasiswa week02_C.main game di kelas")
     }
 }

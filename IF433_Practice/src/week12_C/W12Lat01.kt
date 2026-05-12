@@ -54,6 +54,6 @@ fun main () {
     } catch (e: IllegalArgumentException){
         println("Ada error di nilai: "  + e.message)
     }
-    val trx = transaksi_keuangan(1000)
+    val trx = transaksi_keuangan(2000)
     trx.narik_uang(1200)
 }
