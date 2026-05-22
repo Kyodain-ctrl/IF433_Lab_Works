@@ -1,4 +1,4 @@
-package week12.task
+package oop_114493_claudiawiyadigunawan.week12.task
 
 fun dispenseKibble(
     requestedGram: Int,

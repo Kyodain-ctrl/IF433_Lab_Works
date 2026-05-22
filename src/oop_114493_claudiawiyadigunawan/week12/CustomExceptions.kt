@@ -1,4 +1,4 @@
-package week12
+package oop_114493_claudiawiyadigunawan.week12
 
 class InsufficientFundsException(
     val amount: Double,
