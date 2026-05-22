@@ -64,4 +64,10 @@ fun main() {
     val totalPnl = loadedData.sumOf {
         it.pnl
     }
+
+    loadedData.forEach {
+        println(it)
+    }
+
+    println("=== TOTAL PnL BERSIH: $totalPnl ===")
 }
