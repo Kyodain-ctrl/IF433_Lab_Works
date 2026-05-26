@@ -34,15 +34,28 @@ class db_khs {
     }
 }
 
-fun main() {
-    val khsMhs = proses_khs()
-    val nilaiTugas:Double = khsMhs.hitung_nilai_tugas(83.57, 96.45)
-    val naMhs1:Double = khsMhs.hitung_nilai_akhir(85.67, 70.40, nilaiTugas, kurikulum_merdeka())
-    val naMhs2:Double = khsMhs.hitung_nilai_akhir(85.67, 70.40, nilaiTugas, kurikulum_2013())
+class manager_hitung_khs {
+    fun mulai_perhitungan(quizTugas: Double, aktivitasTugas: Double, utsKamu: Double, uasKamu: Double, jnsKur: jenis_kurikulum): Double {
+        val khsMhs = proses_khs()
+        val nilaiTugas:Double = khsMhs.hitung_nilai_tugas(quizTugas, aktivitasTugas)
+        val nilaiAkhirMhs:Double = khsMhs.hitung_nilai_akhir(utsKamu, uasKamu, nilaiTugas, jnsKur)
+        return nilaiAkhirMhs
+    }
+}
 
-    val dbMhs = db_khs()
-    val statSimpan1:String = dbMhs.simpan_na_db("123", "Claudia", naMhs1)
-    val statSimpan2:String = dbMhs.simpan_na_db("456", "Gunawan", naMhs2)
-    println(statSimpan1)
-    println(statSimpan2)
+class manager_db {
+    fun mulai_simpan(nimMhs:String, namaMhs:String, naMhs: Double): String {
+        val dbMhs = db_khs()
+        return dbMhs.simpan_na_db(nimMhs, namaMhs, naMhs)
+    }
+}
+
+fun main() {
+    val mngKhs = manager_hitung_khs()
+    val naMhs1:Double = mngKhs.mulai_perhitungan(85.73, 87.30, 70.36, 93.57, kurikulum_2013())
+    val naMhs2:Double = mngKhs.mulai_perhitungan(85.73, 87.30, 70.36, 93.57, kurikulum_merdeka())
+
+    val managerDB = manager_db()
+    println(managerDB.mulai_simpan("123", "Claudia", naMhs1))
+    println(managerDB.mulai_simpan("456", "Claudia", naMhs2))
 }
