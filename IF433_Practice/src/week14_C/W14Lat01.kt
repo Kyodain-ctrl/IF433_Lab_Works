@@ -9,6 +9,22 @@ class proses_khs {
     }
 }
 
+interface jenis_kurikulum {
+    fun hitung_nilai_bobot(uts: Double, uas: Double, tugas: Double):Double
+}
+
+class kurikulum_2013: jenis_kurikulum {
+    override fun hitung_nilai_bobot(uts: Double, uas: Double, tugas: Double):Double {
+        return 1.0
+    }
+}
+
+class kurikulum_merdeka: jenis_kurikulum {
+    override fun hitung_nilai_bobot(uts: Double, uas: Double, tugas: Double): Double {
+        return 1.0
+    }
+}
+
 class db_khs {
     fun simpan_na_db(nim: String, nama: String, nilaiAkhir: Double): String {
         return "KHS $nim nama $nama dapat nilai $nilaiAkhir"
