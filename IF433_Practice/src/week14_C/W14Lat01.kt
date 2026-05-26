@@ -57,5 +57,5 @@ fun main() {
 
     val managerDB = manager_db()
     println(managerDB.mulai_simpan("123", "Claudia", naMhs1))
-    println(managerDB.mulai_simpan("456", "Claudia", naMhs2))
+    println(managerDB.mulai_simpan("456", "Gunawan", naMhs2))
 }
